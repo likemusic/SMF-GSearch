@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+	<name>Gsearch</name>
+	<id>Aimbox:Gsearch</id>
+	<type>modification</type>
+	<version>1.0</version>
+
+	<install for="2.0-2.0.99">
+                <readme type="file" parsebbc="true">readme.txt</readme>
+                <database>install.php</database>
+		<modification type="file" format="xml">languages.xml</modification>          
+		<require-file name="Gsearch.php" destination="$sourcedir" />
+                <require-file name="Subs-Gsearch.php" destination="$sourcedir" />
+		<require-file name="GSearch.template.php" destination="$themedir" />                
+	</install>
+	<uninstall for="2.0-2.0.99">
+                <modification type="file" format="xml" reverse="true">languages.xml</modification>
+                <remove-file name="$sourcedir/Gsearch.php" />
+                <remove-file name="$sourcedir/Subs-Gsearch.php" />
+		<remove-file name="$themedir/GSearch.template.php" />
+                <database>uninstall.php</database>
+	</uninstall>
+</package-info>
